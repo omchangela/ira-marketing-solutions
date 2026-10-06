@@ -1,0 +1,259 @@
+/* ==========================================================================
+   IRA — design system
+   Ink background, indigo/violet brand, warm amber accent (matches 3D icons)
+   ========================================================================== */
+
+:root {
+  --bg: #08070d;
+  --bg-2: #0e0c17;
+  --bg-3: #15121f;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.14);
+  --text: #eceaf5;
+  --muted: #8f8ba6;
+  --dim: #5d5a72;
+
+  --indigo: #6c5cff;
+  --violet: #a46bff;
+  --amber: #ff9a4d;
+  --green: #3ddc97;
+
+  --grad: linear-gradient(100deg, #6c5cff 0%, #a46bff 55%, #ff9a4d 100%);
+
+  --font-sans: var(--font-inter-tight), 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --radius: 22px;
+  --container: 1240px;
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* film grain — kills the flat "generated" look */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--indigo);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.section {
+  position: relative;
+  padding: 140px 0;
+}
+
+/* ---------- type ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 12px var(--amber);
+}
+
+.h2 {
+  font-size: clamp(40px, 5.4vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lead {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+  overflow: hidden;
+}
+.btn-light {
+  background: #fff;
+  color: #0b0a12;
+}
+.btn-light:hover {
+  background: var(--amber);
+}
+.btn-ghost {
+  border: 1px solid var(--line-2);
+  color: var(--text);
+}
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+.btn-sm {
+  height: 42px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.btn .arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #0b0a12;
+  color: #fff;
+  font-size: 13px;
+  margin-right: -12px;
+  transition: transform 0.35s var(--ease);
+}
+.btn:hover .arrow {
+  transform: rotate(-45deg);
+}
+.btn .play {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #0b0a12;
+  font-size: 10px;
+  margin-left: -10px;
+}
+
+/* ---------- misc ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.icon3d {
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 30px 40px rgba(60, 30, 160, 0.45));
+}
+
+/* GSAP reveal helpers — hidden only when JS is ready */
+.split-line {
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 96px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

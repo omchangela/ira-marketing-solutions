@@ -1,0 +1,139 @@
+.nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 100;
+  width: min(1240px, calc(100% - 32px));
+  height: 66px;
+  padding: 0 10px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s;
+}
+.scrolled {
+  background: rgba(14, 12, 23, 0.72);
+  border-color: var(--line);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.brand {
+  display: flex;
+}
+
+.links {
+  display: flex;
+  gap: 4px;
+}
+.link {
+  position: relative;
+  padding: 10px 16px;
+  font-size: 14.5px;
+  color: var(--muted);
+  overflow: hidden;
+  transition: color 0.3s;
+}
+.link span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.45s var(--ease);
+}
+.link span::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  color: #fff;
+}
+.link:hover span {
+  transform: translateY(-100%);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  position: relative;
+}
+.burger span {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform 0.4s var(--ease);
+}
+.burger span:first-child {
+  top: 18px;
+}
+.burger span:last-child {
+  top: 25px;
+}
+.burgerOpen span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+.burgerOpen span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(8, 7, 13, 0.97);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 28px;
+  gap: 8px;
+}
+.mRow {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.mLink {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.mLink em {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--amber);
+}
+
+@media (max-width: 960px) {
+  .links {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .nav {
+    top: 12px;
+    height: 60px;
+    padding-left: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .right :global(.btn) {
+    display: none;
+  }
+}

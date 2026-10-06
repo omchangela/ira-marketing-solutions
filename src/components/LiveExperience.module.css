@@ -1,0 +1,196 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.aiBadge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headsetIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.voiceModel {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.statusActive {
+  background: rgba(255, 154, 77, 0.12);
+  border-color: rgba(255, 154, 77, 0.35);
+  color: var(--amber);
+}
+
+.statusDone {
+  background: rgba(61, 220, 151, 0.12);
+  border-color: rgba(61, 220, 151, 0.35);
+  color: var(--green);
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.orbBox {
+  position: relative;
+  height: 120px;
+  border-radius: 20px;
+  background: rgba(14, 12, 23, 0.6);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.orbGlow {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 92, 255, 0.35), transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.orbActive .orbGlow {
+  opacity: 1;
+}
+
+.orbWave {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  z-index: 1;
+  margin-bottom: 8px;
+}
+
+.orbWave span {
+  width: 4px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--violet), var(--amber));
+  transition: height 0.3s ease;
+}
+
+.orbActive .orbWave span {
+  animation: orbWave 0.7s infinite alternate ease-in-out;
+}
+
+@keyframes orbWave {
+  0% {
+    height: 6px;
+  }
+  100% {
+    height: 34px;
+  }
+}
+
+.orbLabel {
+  font-size: 13px;
+  color: var(--muted);
+  z-index: 1;
+}
+
+.transcript {
+  height: 240px;
+  overflow-y: auto;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--line);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+
+.placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--dim);
+  font-size: 14px;
+  padding: 0 20px;
+  line-height: 1.5;
+}
+
+.bubble {
+  max-width: 86%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.bubbleAuthor {
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.bubbleAi {
+  align-self: flex-start;
+  background: rgba(108, 92, 255, 0.2);
+  border: 1px solid rgba(108, 92, 255, 0.35);
+  color: #fff;
+  border-bottom-left-radius: 4px;
+}
+
+.bubbleUser {
+  align-self: flex-end;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line-2);
+  color: var(--text);
+  border-bottom-right-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}

@@ -1,0 +1,135 @@
+.manifesto {
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  max-width: 1080px;
+  margin-bottom: 160px;
+}
+.manifesto em {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--amber);
+}
+
+.head {
+  max-width: 900px;
+  margin-bottom: 64px;
+}
+.head h2 {
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.perspective {
+  perspective: 1400px;
+}
+
+.card {
+  position: relative;
+  border-radius: 28px;
+  background: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: border-color 0.4s;
+}
+.card:hover {
+  border-color: var(--line-2);
+}
+.glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(500px circle at var(--gx, 50%) var(--gy, 0%), rgba(164, 107, 255, 0.16), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.card:hover .glare {
+  opacity: 1;
+}
+
+.link {
+  position: relative;
+  display: block;
+  padding: 34px 36px 38px;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.go {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  display: grid;
+  place-items: center;
+  transition: background 0.35s, color 0.35s, transform 0.5s var(--ease);
+}
+.card:hover .go {
+  background: #fff;
+  color: #0b0a12;
+  transform: rotate(45deg);
+}
+
+.iconWrap {
+  height: 300px;
+  display: grid;
+  place-items: center;
+  perspective: 800px;
+}
+.iconWrap img {
+  width: 270px;
+  height: 270px;
+  object-fit: contain;
+}
+
+.link h3 {
+  font-size: clamp(30px, 3vw, 42px);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  font-weight: 600;
+}
+.link p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 16.5px;
+  max-width: 440px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .manifesto {
+    margin-bottom: 100px;
+  }
+  .iconWrap {
+    height: 220px;
+  }
+  .iconWrap img {
+    width: 200px;
+    height: 200px;
+  }
+  .link {
+    padding: 26px 24px 30px;
+  }
+}
