@@ -52,7 +52,7 @@ export default function Navbar({ onOpenDemo }) {
         <nav className={styles.links} aria-label="Primary">
           {LINKS.map((l) => (
             <a key={l.href} href={l.href} className={styles.link}>
-              <span data-text={l.label}>{l.label}</span>
+              {l.label}
             </a>
           ))}
         </nav>
