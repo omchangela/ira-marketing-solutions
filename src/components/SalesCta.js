@@ -88,8 +88,8 @@ export default function SalesCta({ onOpenDemo, onOpenExperience }) {
 
             <div className={styles.actions}>
               <Magnetic>
-                <button id="cta-book-demo" className="btn btn-light" onClick={onOpenDemo}>
-                  Book a Demo <span className="arrow">→</span>
+                <button id="cta-book-demo" className="btn btn-primary" onClick={onOpenDemo}>
+                  Get Free Growth Audit <span className="arrow">→</span>
                 </button>
               </Magnetic>
               <button id="cta-hear-call" className="btn btn-ghost" onClick={onOpenExperience}>

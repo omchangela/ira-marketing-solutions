@@ -154,8 +154,8 @@ export default function Marketing() {
                   />
                   <defs>
                     <linearGradient id="lg" x1="0" x2="1">
-                      <stop offset="0" stopColor="#6c5cff" />
-                      <stop offset="1" stopColor="#ff9a4d" />
+                      <stop offset="0" stopColor="#09757A" />
+                      <stop offset="1" stopColor="#F4C430" />
                     </linearGradient>
                   </defs>
                 </svg>

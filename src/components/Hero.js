@@ -157,7 +157,8 @@ export default function Hero({ onOpenDemo, onOpenExperience }) {
 
           <h1 className={styles.title}>
             <span className={styles.line}>
-              <span data-line>Get more leads.</span>
+              <span data-line>More leads.
+              </span>
             </span>
             <span className={styles.line}>
               <span data-line>
@@ -167,19 +168,18 @@ export default function Hero({ onOpenDemo, onOpenExperience }) {
           </h1>
 
           <p className={styles.sub} data-fade>
-            <strong>IRA</strong> brings customers to your business through digital marketing.{' '}
-            <strong>Third Assistant</strong> makes sure someone is always there to answer, qualify, and move those leads
-            forward.
+            <strong>IRA</strong> runs targeted digital marketing that brings qualified leads to your business.{' '}
+            <strong>Third Assistant</strong>, our AI receptionist, answers every call 24/7 — so you convert more and miss none.
           </p>
 
           <div className={styles.ctas} data-fade>
             <Magnetic>
-              <button id="hero-grow-business" className="btn btn-light" onClick={onOpenDemo}>
-                Grow My Business <span className="arrow">→</span>
+              <button id="hero-grow-business" className="btn btn-primary" onClick={onOpenDemo}>
+                Get Free Growth Audit <span className="arrow">→</span>
               </button>
             </Magnetic>
             <button id="hero-hear-experience" className="btn btn-ghost" onClick={onOpenExperience}>
-              <span className="play">▶</span> Hear the Experience
+              <span className="play">▶</span> Hear Third Assistant
             </button>
           </div>
 

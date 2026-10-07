@@ -22,8 +22,8 @@ export function LeadForm({ idPrefix = 'contact', onSuccess }) {
     return (
       <div className={styles.successBox}>
         <div className={styles.successIcon}>✓</div>
-        <h3>Demo Requested!</h3>
-        <p>Our team will reach out within 15 minutes to configure your customized growth preview.</p>
+        <h3>Audit Request Received!</h3>
+        <p>Our growth strategist will reach out within 15 minutes to schedule your Free Growth Audit.</p>
         <button
           className="btn btn-ghost btn-sm"
           style={{ marginTop: 18 }}
@@ -98,7 +98,7 @@ export function LeadForm({ idPrefix = 'contact', onSuccess }) {
         style={{ width: '100%', justifyContent: 'center', marginTop: 10 }}
         disabled={loading}
       >
-        {loading ? 'Submitting…' : 'Request a Demo'} <span className="arrow">→</span>
+        {loading ? 'Submitting…' : 'Claim My Free Growth Audit'} <span className="arrow">→</span>
       </button>
 
       <p className={styles.privacyNote}>
@@ -115,12 +115,12 @@ export default function Contact() {
       <div className="container">
         <div className={styles.layout}>
           <div className={styles.info}>
-            <span className="eyebrow">Let&apos;s Talk</span>
+            <span className="eyebrow">Free Growth Audit</span>
             <h2 className="h2">
-              See how IRA + Third Assistant can <span className="serif grad-text">work for your business.</span>
+              Get your personalized <span className="serif grad-text">growth blueprint.</span>
             </h2>
             <p className="lead">
-              Get a customized walkthrough of both our lead generation campaigns and real-time AI receptionist workflows.
+              In 20 minutes we&apos;ll analyze your current marketing, your call-handling gaps, and show you the fastest path to more customers — at no cost and no obligation.
             </p>
 
             <div className={styles.reasons}>
@@ -152,7 +152,7 @@ export default function Contact() {
             <Tilt className={styles.formCard} max={5}>
               <div className={styles.formCardHeader}>
                 <span className={styles.dotActive} />
-                <span>Private Consultation Booking</span>
+                <span>Free Growth Audit — No Obligation</span>
               </div>
               <LeadForm idPrefix="inline" />
             </Tilt>

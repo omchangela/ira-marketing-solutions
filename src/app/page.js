@@ -14,6 +14,7 @@ import Contact, { LeadForm } from '../components/Contact';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import LiveExperience from '../components/LiveExperience';
+import FAQ from '../components/FAQ';
 
 export default function Home() {
   const [demoOpen, setDemoOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function Home() {
         <Assistant onOpenExperience={openLive} />
         <Journey />
         <BrandArchitecture />
+        <FAQ />
         <SalesCta onOpenDemo={openDemo} onOpenExperience={openLive} />
         <Contact />
       </main>

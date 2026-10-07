@@ -9,6 +9,7 @@ const LINKS = [
   { href: '#marketing', label: 'Marketing' },
   { href: '#assistant', label: 'Third Assistant' },
   { href: '#how', label: 'How It Works' },
+  { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -57,8 +58,8 @@ export default function Navbar({ onOpenDemo }) {
         </nav>
         <div className={styles.right}>
           <Magnetic>
-            <button id="nav-book-demo" className="btn btn-light btn-sm" onClick={onOpenDemo}>
-              Book a Demo
+            <button id="nav-book-demo" className="btn btn-primary btn-sm" onClick={onOpenDemo}>
+              Free Growth Audit
             </button>
           </Magnetic>
           <button
