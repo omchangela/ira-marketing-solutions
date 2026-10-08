@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
-        <Script src="/three.min.js" strategy="beforeInteractive" />
       </head>
       <body>{children}</body>
     </html>
